@@ -16,10 +16,12 @@ packer.startup(
       use {
         "folke/tokyonight.nvim",
         config = function()
-          require("plugin.colorscheme")
+          -- 设置主题
+          vim.cmd([[colorscheme tokyonight]])
         end
       }
 
+      -- 文件树
       use {
         "kyazdani42/nvim-tree.lua",
         requires = {
@@ -27,9 +29,31 @@ packer.startup(
           "kyazdani42/nvim-web-devicons"
         },
         config = function()
-          require("plugin.nvim-tree")
+          require("keybind.nvim_tree")
         end
       }
+
+      -- 标签页
+      use {
+        "akinsho/bufferline.nvim", 
+        requires = { 
+          "kyazdani42/nvim-web-devicons", 
+          "moll/vim-bbye" 
+        },
+        config = function()
+          require("plugin.bufferline")
+          require("keybind.bufferline")
+        end
+      }
+
+      -- 状态栏
+      use({ 
+        "nvim-lualine/lualine.nvim", 
+        requires = { "kyazdani42/nvim-web-devicons" },
+        config =function()
+          require("plugin.lualine")
+        end
+      })
     end,
 
     config = {
@@ -38,6 +62,7 @@ packer.startup(
         open_fn = require("packer.util").float
       },
 
+      -- git 代理
       git = {
         -- default_url_format = "https://hub.fastgit.xyz/%s",
         -- default_url_format = "https://mirror.ghproxy.com/https://github.com/%s",
@@ -48,7 +73,7 @@ packer.startup(
   }
 )
 
--- 实时生效配置
+-- 修改本文件, 实时生效配置
 vim.cmd(
   [[
     augroup packer_user_config

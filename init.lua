@@ -1,3 +1,6 @@
 -- 加载配置项  
-require("basic.settings")
-require("basic.keybinds")
+require("setting.settings")
+
+require("keybind.keybinds")
+
+require("plugin.plugins")

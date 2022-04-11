@@ -3,18 +3,19 @@
 
 ## TODO
 
-- [ ] 文件树
+- [ ] File Tree
 - [ ] 文件搜索(最近、所有)
 - [ ] 全局搜索、替换
 - [ ] LSP
 - [ ] GitHub Copilot
 - [ ] Debug
 
-- [ ] 重构
+- [ ] Formatter
+- [ ] Linter
 - [ ] EditorConfig
 
 - [ ] Git GUI
-- [ ] 待办树
+- [ ] ToDo List
 
 - [ ] Remote FS
 - [ ] SFTP
